@@ -1,0 +1,98 @@
+
+<section >
+  <div class="container">
+  <div class="add-menu-form">
+    <div class="form">
+    <h3>Add New Menu Item</h3>
+    <form (ngSubmit)="addMenu()">
+      <!-- Name Input -->
+      <input
+        class="form-input"
+        [(ngModel)]="newMenu.name"
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Name of the item"
+        (keydown.enter)="$event.preventDefault()"
+
+      />
+
+      <input
+        class="form-input"
+        type="number"
+        [(ngModel)]="newMenu.price"
+        id="price"
+        name="price"
+        required
+        placeholder="Price"
+        (keydown.enter)="$event.preventDefault()"
+
+      />
+
+      <input
+        class="form-input"
+        type="text"
+        [(ngModel)]="newMenu.imageURL"
+        id="image"
+        name="image"
+        required
+        placeholder="Image URL"
+        (keydown.enter)="$event.preventDefault()"
+
+      />
+
+      <!-- Ingredient Input -->
+      <input
+        class="form-input"
+        type="text"
+        id="ingredients"
+        [(ngModel)]="ingredientInput"
+        name="ingredients"
+        placeholder="Type an ingredient and press Enter"
+        (keydown.enter)="$event.preventDefault(); addIngredient()" 
+      />
+
+      <fieldset class="checkbox-rect">
+        <legend>Ingredients</legend>
+        <div *ngFor="let ingredient of ingredientsArray">
+          <input
+            type="checkbox"
+            [id]="ingredient"
+            [checked]="true"
+            (change)="toggleIngredient(ingredient)"
+          />
+          <label [for]="ingredient">{{ ingredient }}</label>
+        </div>
+      </fieldset>
+      
+      
+      <div class="buttons">
+        <button type="submit">
+          <span>Add</span>
+        </button>
+        <button type="button" (click)="reset()">
+          <span>Reset </span>
+        </button>
+      </div>
+      <span class="signup-link">
+        <a title="home button icons" [routerLink]="''">
+            <img src="assets/images/home.png" width="50px" height="50px" style="margin-top: 30px;">
+        </a>
+      </span>
+    
+    </form>
+  </div>
+  </div>
+  <img class="imageurl"
+  [src]="newMenu.imageURL"
+  width="700px"
+  height="700px"
+/>
+</div>
+
+</section>
+
+
+
+  

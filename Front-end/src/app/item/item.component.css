@@ -1,0 +1,199 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+}
+html, body {
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey */
+  border-radius: 6px; /* Rounded corners */
+}
+
+/* Handle (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Darker grey */
+  border-radius: 6px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Dark grey */
+}
+
+/* For Firefox */
+
+.container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #cce9d5ab;
+
+}
+.add-menu-form  {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  background-color: #fefdfba9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.395);
+
+}
+  .add-menu-form h3{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-family: 'Roboto';
+    text-align: center;
+    font-style: italic;   
+  }
+  .add-menu-form form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+.form{
+  display: flex;
+  flex-direction: column;  
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 40px;
+}
+form{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-input{
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  padding:1rem 2rem 1rem;
+  border: 1px solid #95dfac;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.add-menu-form input:hover{
+  transform: translateY(-6px);
+  border-radius: 0px;
+
+
+}
+.add-menu-form input::placeholder{
+  font-size: 1.2rem;
+  font-family: 'Poppins';
+  color: rgba(0, 0, 0, 0.487);
+  font-weight: 600;
+
+}
+.imageurl{
+  border: 6px solid black;
+  border-radius: 4rem;
+}
+
+.imageItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background-color: #cce9d5;
+
+}
+
+  
+
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+  }
+  .buttons button{
+    padding: 1.3rem;
+    outline: none;
+    border: 1.7px solid black;
+    border-radius: 1.3rem;
+    font-family: 'Roboto';
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: 0.7s ease-in-out;
+  }
+  .buttons button:hover{
+    background-color: #cce9d58b;
+    transform: translateY(-6px);
+
+  }
+  button span{
+    margin: 0 2.6rem 0;
+  }
+  .checkbox-rect{
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+    min-height: 100px;
+    border:1px solid #95dfac;
+    border-radius: 10px;
+    max-height:130px;
+    overflow-y: scroll;
+    max-width: 600px;
+    flex-wrap:wrap;
+  }
+  .checkbox-rect input[type="checkbox"] {
+    display: none;
+  }
+  .checkbox-rect input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font: 14px/20px "Open Sans", Arial, sans-serif;
+    cursor: pointer;
+
+  }
+  .checkbox-rect input[type="checkbox"]:hover + label:hover {
+    color: rgb(23, 86, 228);
+  }
+  .checkbox-rect input[type="checkbox"]:hover + label:before {
+    background: #cce9d5;
+    box-shadow: inset 0px 0px 0px 2px #f7f2f2;
+  }
+  .checkbox-rect input[type="checkbox"] + label:last-child {
+    margin-bottom: 0;
+  }
+  .checkbox-rect input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #95dfac;
+    border-radius: 0.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+    transition: all 0.2s, background 0.2s ease-in-out;
+    background: #f3f3f3;
+  }
+  .checkbox-rect input[type="checkbox"]:checked + label:before {
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.2em;
+    border: 2px solid #fff;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background: #93e5ad;
+    box-shadow: 0 0 0 1px #000;
+  }

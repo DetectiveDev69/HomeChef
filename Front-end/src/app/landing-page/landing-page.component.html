@@ -1,0 +1,154 @@
+<!-- Linking Google Fonts for Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- Linking Google Fonts for Roboto -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<!-- Linking Google Fonts for Cinzel -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<div class="container">
+  <header >
+    <a href="#home"><img src="assets\images\logo.png"  width="150px" height="99px" alt="logo"></a>
+    <ul class="navbar">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#aboutus">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#suggestions">Suggestions</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    
+      <!-- Show Login and SignUp links only when token is not available -->
+      <li *ngIf="newToken== null"><a class="btn" routerLink="/login">LogIn</a></li>
+      <li *ngIf="newToken== null"><a class="btn" routerLink="/signup">SignUp</a></li>
+      <li *ngIf="userRole=='seller' && newToken!== null "><a routerLink="/order">Order</a></li>
+      <!-- Show Order, Dashboard, and SignOut links only when token is available -->
+      <li *ngIf="userRole=='seller' && newToken!== null "><a routerLink="/item">Item</a></li>
+      <li  ><a routerLink="/menu">Menu</a></li>
+      <li *ngIf="newToken !== null"><a class="btn" (click)="logout()">SignOut</a></li>
+        </ul>
+  </header>
+  <section id="home">
+    <div class="all-text" >
+      <div class="text" >
+        <h1 class="text-h1" #animateOnScroll>FRESH MEALS</h1>
+        <h4 class="text-h4" #animateOnScrollh3>EAT HEALTHY</h4>
+        <p  #animateOnScroll class="text-p"> Welcome to <b>HOMECHEF</b>, where homemade meals are just a click away. We connect passionate home chefs with busy individuals craving fresh, healthy, and authentic dishes. Enjoy a variety of meals made with quality ingredients, delivered right to your door because good food should be convenient and delicious.</p>
+      </div>
+    </div>
+    <img class="home-img" src="assets\images\img.jpg"    #animateOnScroll>
+  </section>
+  <section id="aboutus">
+    <div class="about-text">
+      <h1>About Us</h1>
+    </div>
+    <div class="details">
+      <div class="detail">
+        <img src="assets\images\chef-hat.png"  class="im" #animateOnScroll> 
+        <h3 #animateOnScrollh3 class="aboutus-h3">+350 local chef</h3>
+      </div>
+      <div class="detail">
+        <img src="assets\images\package.png"  class="im" #animateOnScroll>
+
+        <h3 #animateOnScrollh3 class="aboutus-h3">+1000 delivery per day</h3>
+      </div>
+      <div class="detail">
+        <img src="assets\images\cuisine.png"   class="im" #animateOnScroll>
+
+        <h3 #animateOnScrollh3 class="aboutus-h3">10+ cuisine</h3>
+      </div>
+      <div class="detail">
+        <img src="assets\images\user.png"  class="im" #animateOnScroll>
+        <h3 #animateOnScrollh3 class="aboutus-h3">+1500 satisfied customers</h3>
+        
+      </div>
+    </div>
+  </section>
+  <section id="services"><h1>Services</h1>
+    <div class="service-content">
+      <div class="service-card" #animateOnScroll>
+        <img src="assets\images\food.png" alt="Ready-to-Eat Meals Icon" class="service-icon">
+        <h2>Ready-to-Eat High-Quality Meals</h2>
+        <p>Enjoy freshly prepared, ready-to-eat meals that combine convenience with top-tier quality. Skip the hassle of cooking while still savoring nutritious and delicious dishes, delivered right to your door.</p>
+      </div>
+      <div class="service-card" #animateOnScroll>
+        <img src="assets\images\fruit.png" alt="Nutritious Meals Icon" class="service-icon">
+        <h2>Nutritious and Diverse Meals</h2>
+        <p>Our meals are designed to cater to a variety of tastes and dietary preferences, ensuring that you always have nutritious options to choose from. Whether you're craving something fresh, spicy, or comforting, we've got it covered.</p>
+      </div>
+      <div class="service-card" #animateOnScroll>
+        <img src="assets\images\nutrition.png" alt="Customizable Meals Icon" class="service-icon">
+        <h2>Customizable Meals</h2>
+        <p>Want a little extra spice or a different protein? Our customizable meals let you choose the ingredients and flavors that best fit your taste or dietary needs, so you get exactly what you're craving every time.</p>
+      </div>
+      <div class="service-card" #animateOnScroll>
+        <img src="assets\images\order-food.png" alt="Order Online Icon" class="service-icon">
+        <h2>Order Online</h2>
+        <p>With our easy-to-use online ordering platform, you can browse, select, and customize your meals at the click of a button. It's never been simpler to enjoy freshly cooked, home-made meals delivered to you.</p>
+      </div>
+      <div class="service-card" #animateOnScroll>
+        <img src="assets\images\salary.png" alt="Income for Small Chefs Icon" class="service-icon">
+        <h2>Income Source for Small/Talented Chefs</h2>
+        <p>We provide a unique opportunity for talented home chefs to share their passion with others. Our platform helps small, local chefs earn income by preparing and delivering meals, supporting local talents. </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section  class="suggestions">
+    <div  #scrollContainer class="scroll-container" (mouseenter)="onHover()"  class="suggestions-container">
+      <img src="\assets\images\suggestions\cookies.png" >
+      <img src="\assets\images\suggestions\pasta.jpg" > 
+      <img src="\assets\images\suggestions\pizza.jpeg" > 
+      <img src="\assets\images\suggestions\ramen.png" > 
+      <img src="\assets\images\suggestions\rice.jpg" > 
+      <img src="\assets\images\suggestions\risotto.jpg" > 
+      <img src="\assets\images\suggestions\salad.jpg" > 
+      <img src="\assets\images\suggestions\steak.jpg" > 
+      <img src="\assets\images\suggestions\suhsi.png" > 
+    </div>
+  </section>
+  <div class="but">
+    <button class="sugg-button">View More!</button>
+
+  </div>
+
+
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="social-media">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#" target="_blank"><img src="assets/images/facebook.png" alt="Facebook"></a></li>
+          <li><a href="#" target="_blank"><img src="assets/images/instagram.png" alt="Instagram"></a></li>
+          <li><a href="#" target="_blank"><img src="assets/images/tik-tok.png" alt="TikTok"></a></li>
+        </ul>
+      </div>
+  
+      <div class="feedback">
+        <h3>Contact Us</h3>
+        <p >We value your feedback! If you have any questions or suggestions, feel free to reach out to us.</p>
+        <div class="address">
+          <h4>Our Address</h4>
+          <p>1234 Food Street, City, Country</p>
+        </div>
+      </div>
+  
+      <div class="bottom-info">
+        <h3>Copy Right</h3>
+        <p>&copy; 2024 HOMECHEF. All rights reserved.</p>
+        <p>Our services are available in:Tunis, Nabeul,Sousse,Beja</p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  
+
+</div>

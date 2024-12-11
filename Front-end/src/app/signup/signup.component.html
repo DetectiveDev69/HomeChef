@@ -1,0 +1,147 @@
+<!-- Linking Google Fonts for Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- Linking Google Fonts for Roboto -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<!-- Linking Google Fonts for Cinzel -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<section>
+    <div class="container">
+        <div class="image-container">
+            <img src="assets/images/sign_up.png" width="700px" height="700px" alt="Image">
+          </div>
+      <div class="signup-container">
+        <div class="form">
+          <h1 class="head">Join Our Community Today!</h1>
+          <form (ngSubmit)="onSubmit()" #signupForm="ngForm" novalidate>
+            <div class="field">
+            <div class="signupcontent">
+              <input
+                type="text"
+                placeholder="Your Username"
+                id="username"
+                name="username"
+                [(ngModel)]="username"
+                required
+                #usernameInput="ngModel"
+                pattern="^[a-zA-Z0-9]+$"
+              />
+              <img src="assets/images/user.png" width="30px" height="30px" />
+            </div>
+            <div class="error-message" *ngIf="getErrorMessage(usernameInput)">
+              {{ getErrorMessage(usernameInput) }}
+            </div>
+          </div>
+            <div class=" field">
+              <div class="signupcontent">
+                <input
+                  type="email"
+                  placeholder="example@yahoo.com"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="email"
+                  required
+                  pattern="^.*@.*$"
+                    #emailInput="ngModel"
+                />
+                <img src="assets/images/email.png" width="30px" height="30px" />
+                
+              </div>
+              <div class="error-message" *ngIf="getErrorMessage(emailInput)">
+                {{ getErrorMessage(emailInput) }}
+              </div>
+             </div>
+            <div class=" field">
+            <div class=" signupcontent ">
+              <input
+                [type]="isPasswordVisible ? 'text' : 'password'"
+                placeholder="Password"
+                id="password"
+                name="password"
+                [(ngModel)]="password"
+                required
+                #passwordInput="ngModel"
+              />
+              <img
+                [src]="isPasswordVisible ? 'assets/images/view.png' : 'assets/images/hide.png'"
+                style="cursor: pointer; width: 30px; height: 30px;"
+                (click)="togglePasswordVisibility()"
+              />
+             
+            </div>
+            <div class="error-message" *ngIf="getErrorMessage(passwordInput)">
+              {{ getErrorMessage(passwordInput) }}
+            </div>
+           </div>
+            <div class="field">
+            <div class=" signupcontent ">
+              <select
+                id="role"
+                name="role"
+                [(ngModel)]="role"
+                required
+                #roleInput="ngModel"
+              >
+                <option value="" disabled selected>Select your role</option>
+                <option value="client">Client</option>
+                <option value="seller">Seller</option>
+              </select>
+              
+            </div><div class="error-message" *ngIf="getErrorMessage(roleInput)">
+              {{ getErrorMessage(roleInput) }}            </div>
+            </div>
+            <button class="button-submit" type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+          </form>
+          
+          
+          
+            <span class="signup-link">
+              Already have an account? <a [routerLink]="'/login'">Login</a>
+            </span>
+            <h1 class="divider">or</h1>
+            <div class="social-login">
+              <button class="social-button facebook">
+                <img
+                  src="assets/images/facebook-app-symbol.png"
+                  width="30px"
+                  height="30px"
+                  style="margin-right: 10px;"
+                />
+                Continue with Facebook
+              </button>
+              <button class="social-button google">
+                <img
+                  src="assets/images/google.png"
+                  width="30px"
+                  height="30px"
+                  style="margin-right: 10px;"
+                />
+                Continue with Google
+              </button>
+       
+            </div>
+            <span class="signup-link">
+              <a title="home button icons" [routerLink]="''">
+                  <img src="assets/images/home.png" width="50px" height="50px" style="margin-top: 30px;">
+              </a>
+            </span>
+          </div>
+          </div>  
+        </div>
+  </section>
+  <script src="https://accounts.google.com/gsi/client" async defer> </script>
+ 
+  
+
+
+
+

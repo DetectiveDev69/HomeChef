@@ -1,0 +1,29 @@
+<div class="orders-container">
+    <h2>Orders for User: {{ UserID }}</h2>
+  <div class="order">
+    <div *ngFor="let order of incomingOrder" class="order-card">
+      
+        <!-- Card Header: Displays order image and title -->
+        <div class="card-header">
+          <img [src]="order.imageURL" alt="Order Image" class="order-image" width="220rem" height="220rem"/>
+          <div class="order-title">{{ order.name }}</div>
+        </div>
+    
+        <!-- Card Body: Displays order details such as ingredients, price, and quantity -->
+        <div class="card-body">
+          <p><span>Ingredients:</span> {{ order.ingredients }}</p>
+          <p><span>Price:</span> ${{ order.price }}</p>
+          <p><span>Quantity:</span> {{ order.quantity }}</p>
+        </div>
+    
+        <!-- Card Footer: Displays total cost -->
+        <div class="card-footer">
+          <p><strong>Total:</strong> ${{ order.price * order.quantity }}</p>
+        </div>
+    
+      </div>
+  </div>
+    <!-- Loop through the incomingOrder array and display each order -->
+  
+  </div>
+  
